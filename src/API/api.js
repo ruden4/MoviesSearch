@@ -12,10 +12,10 @@ export async function getTrendingMovies() {
     }
 }
 
-export async function getFilteredMovies(query) {
+export async function getFilteredMovies(q) {
     try {
         const response = await axios.get(
-            `search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+            `search/movie?api_key=${API_KEY}&language=en-US&query=${q}&page=1&include_adult=false`
         );
         return response.data;
     } catch (error) {

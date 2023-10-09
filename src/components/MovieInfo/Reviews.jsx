@@ -20,7 +20,10 @@ const Reviews = () => {
     }, [movieId]);
     
     if (!review) return (
+        <div>
         <p>No reviews</p>
+        </div>
+
     );
 
     return (

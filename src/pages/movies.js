@@ -1,18 +1,44 @@
 import { useState, useEffect } from "react";
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { getFilteredMovies } from "API/api";
+import MovieCard from "components/TrendingList/MovieCard";
+import Searchbar from "components/Searchbar/Searchbar";
+
 
 const Movies = () => {
+
     const [filteredMovies, setFilteredMovies] = useState([]);
-    const [inpit, setInput] = useState('');
+
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const location = useLocation();
+
+    const serchQuery = searchParams.get('title')
 
     useEffect(() => {
-        const filteredList = async () => {
-
+        if (!serchQuery) return;
+        const getSearchList = async () => {
+            try {
+                await getFilteredMovies(serchQuery)
+                    .then(({results}) => {
+                        if (!results.length) return alert('Sorry, no results...');
+                        setFilteredMovies(results)
+                    })
+            } catch (error) {
+                alert(`Sorry! Error:${error}`)
+            };
         }
-    },[])
+    getSearchList()
+    }, [serchQuery]);
+
+    const onSubmit = title => {
+        setSearchParams({title})
+    };
 
     return (
-        <>Movies</>
+        <div>
+            <Searchbar onSubmit={onSubmit}/>
+        </div>
     )
 }
 
