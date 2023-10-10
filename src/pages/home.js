@@ -16,7 +16,7 @@ const Home = () => {
             }
         }
         getMoviesList()
-    },[movies])
+    },[])
 
     return (
         <TrendingList list={movies} />

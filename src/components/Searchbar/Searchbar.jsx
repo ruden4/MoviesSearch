@@ -1,6 +1,4 @@
 import css from './Searchbar.module.css'
-import { useSearchParams } from 'react-router-dom';
-
 
 const Searchbar = ({onSubmit}) => {
 

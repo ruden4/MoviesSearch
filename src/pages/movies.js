@@ -20,7 +20,7 @@ const Movies = () => {
         const getSearchList = async () => {
             try {
                 await getFilteredMovies(serchQuery)
-                    .then(({results}) => {
+                    .then(({ results }) => {
                         if (!results.length) return alert('Sorry, no results...');
                         setFilteredMovies(results)
                     })
@@ -28,16 +28,18 @@ const Movies = () => {
                 alert(`Sorry! Error:${error}`)
             };
         }
-    getSearchList()
+        getSearchList()
     }, [serchQuery]);
 
     const onSubmit = title => {
-        setSearchParams({title})
+        setSearchParams({ title })
     };
 
     return (
         <div>
-            <Searchbar onSubmit={onSubmit}/>
+            <Searchbar onSubmit={onSubmit} />
+            {filteredMovies.map(({ title, vote_average, poster_path, id }) =>
+                    <MovieCard key={id} title={title} rating={vote_average} poster={poster_path} id={id} />)}
         </div>
     )
 }
