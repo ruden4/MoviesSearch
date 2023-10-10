@@ -13,7 +13,7 @@ const Movies = () => {
 
     const location = useLocation();
 
-    const serchQuery = searchParams.get('name')
+    const serchQuery = searchParams.get('title')
 
     useEffect(() => {
         if (!serchQuery) return;
@@ -32,7 +32,7 @@ const Movies = () => {
     }, [serchQuery]);
 
     const onSubmit = title => {
-        setSearchParams({ name:title })
+        setSearchParams({ title })
     };
 
     return (
