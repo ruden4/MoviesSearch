@@ -1,9 +1,14 @@
 import { getMovieByID } from "API/api";
 import MovieInfoItem from "components/MovieInfo/MovieInfo";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import { useParams, Link, useLocation} from "react-router-dom";
+
 
 const MovieInfo = () => {
+
+    const location = useLocation();
+
+    const backLocationRef = useRef(location.state?.from ?? '/movies')
 
     const [dataDetails, setDataDetails] = useState('');
 
@@ -22,7 +27,8 @@ const MovieInfo = () => {
     },[movieId])
 
     return (
-        <>
+        <>  
+            <Link to={backLocationRef.current}><button type="button">{`<< Go Back`}</button></Link>
             <MovieInfoItem data={dataDetails}/>
         </>
     )

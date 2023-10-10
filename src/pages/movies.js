@@ -39,7 +39,7 @@ const Movies = () => {
         <div>
             <Searchbar onSubmit={onSubmit} />
             {filteredMovies.map(({ title, vote_average, poster_path, id }) =>
-                    <MovieCard key={id} title={title} rating={vote_average} poster={poster_path} id={id} />)}
+            <MovieCard key={id} title={title} rating={vote_average} poster={poster_path} id={id} />)}
         </div>
     )
 }

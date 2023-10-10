@@ -1,5 +1,5 @@
 import { getTrendingMovies } from "API/api";
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
 import TrendingList from "components/TrendingList/TrendingList";
 
 const Home = () => {
