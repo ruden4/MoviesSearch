@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/448.fed87821.chunk.css","mappings":"AAAA,qBACI,YAAa,CACb,qBAAsB,CACtB,QACJ,CACA,qBAAO,wBAAkC,CACzC,YACA","sources":["components/MovieInfo/Reviews.module.css"],"sourcesContent":[".list {\n    display: flex;\n    flex-direction: column;\n    gap: 20px;\n}\n.item {background-color: rgb(88, 88, 255);\npadding: 20px;\n}\n"],"names":[],"sourceRoot":""}
