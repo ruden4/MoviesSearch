@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid;
     padding: px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .input {
@@ -12,7 +12,6 @@
     background-color: whitesmoke;
     padding: 5px;
     outline: none;
-    border-bottom-left-radius: 10px;
     border: 1px solid transparent;
     transition-duration: 300ms;
 }
@@ -24,12 +23,12 @@
 .searchBtn {
     padding: 5px 30px;
     border: 1px solid transparent;
-    background-color: #76ABDF;
+    background-color: rgb(88, 88, 255);
     color: white;
     transition-duration: 300ms;
 }
 
 .searchBtn:hover {
-    background-color: orangered;
-
+    background-color: #2b2554;
+    border-color: white;
 }

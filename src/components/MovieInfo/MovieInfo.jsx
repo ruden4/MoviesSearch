@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { Suspense } from "react";
-
+import css from './MovieInfo.module.css'
 const MovieInfoItem = ({ data }) => {
 
     const { title, overview, poster_path, release_date, genres, vote_average} = data;
@@ -11,23 +11,23 @@ const MovieInfoItem = ({ data }) => {
         return;
     }
     return (
-        <div>
-            <div>
+        <div className={css.wrapper}>
+            <div className={css.topWrap}>
                 <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={`${title} poster`}/>
                 <div>
-                    <h1>{title}<span>{`(${year})`}</span></h1>
-                    <p>Rating:{` ${vote_average}`}</p>
-                    <h3>Overview</h3>
-                    <p>{overview}</p>
-                    <h3>Genres</h3>
-                    <p>{genres.map(({ name }) => name).join(" ")}</p>
+                    <h1 >{title}<span>{`(${year})`}</span></h1>
+                    <p >Rating:{` ${vote_average}`}</p>
+                    <h3 >Overview</h3>
+                    <p >{overview}</p>
+                    <h3 >Genres</h3>
+                    <p >{genres.map(({ name }) => name).join(" ")}</p>
                 </div>
             </div>
-            <div>
-                <h3>Additional information</h3>
-                <ul>
-                    <li><Link to="cast">Cast</Link></li>
-                    <li><Link to="reviews">Reviews</Link></li>
+            <div className={css.bottomWrap}>
+                <h3 >Additional information</h3>
+                <ul >
+                    <li ><Link to="cast">Cast</Link></li>
+                    <li ><Link to="reviews">Reviews</Link></li>
                 </ul>
                 <Suspense fallback={<div>Loading...</div>}>
                 <Outlet/>

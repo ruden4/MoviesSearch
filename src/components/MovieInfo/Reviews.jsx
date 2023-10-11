@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getReviewsByID } from "API/api";
+import css from './Reviews.module.css'
 
 const Reviews = () => {
 
@@ -28,11 +29,11 @@ const Reviews = () => {
 
     return (
         <div>
-            <ul>
+            <ul className={css.list}>
                 {review.map(({ author, content, id }) =>
-                    <li key={id}>
-                        <h3>{author}</h3>
-                        <p>{content}</p>
+                    <li className={css.item} key={id}>
+                        <h3 className={css.author}>{author}</h3>
+                        <p className={css.content}>{content}</p>
                     </li>
                 )}
             </ul>

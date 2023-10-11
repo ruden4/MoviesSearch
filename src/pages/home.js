@@ -19,7 +19,10 @@ const Home = () => {
     },[])
 
     return (
-        <TrendingList list={movies} />
+        <>
+        <h2>Trending now</h2>
+            <TrendingList list={movies} />
+            </>
     )
 };
 

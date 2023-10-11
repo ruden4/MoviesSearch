@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { getFilteredMovies } from "API/api";
-import MovieCard from "components/TrendingList/MovieCard";
 import Searchbar from "components/Searchbar/Searchbar";
+import TrendingList from "components/TrendingList/TrendingList";
 
 
 const Movies = () => {
@@ -10,8 +10,6 @@ const Movies = () => {
     const [filteredMovies, setFilteredMovies] = useState([]);
 
     const [searchParams, setSearchParams] = useSearchParams();
-
-    const location = useLocation();
 
     const serchQuery = searchParams.get('title')
 
@@ -38,8 +36,9 @@ const Movies = () => {
     return (
         <div>
             <Searchbar onSubmit={onSubmit} />
-            {filteredMovies.map(({ title, vote_average, poster_path, id }) =>
-            <MovieCard key={id} title={title} rating={vote_average} poster={poster_path} id={id} />)}
+            <div>
+            {<TrendingList list={filteredMovies}/>}
+            </div>
         </div>
     )
 }

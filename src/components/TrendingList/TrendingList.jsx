@@ -1,17 +1,17 @@
 import MovieCard from "./MovieCard";
+import css from "./TrendingList.module.css"
 
 const TrendingList = ({ list }) => {
     return (
         <section>
-            <h2>Trending now</h2>
-            <div>
-                {list.map(({ id, title, vote_average, poster_path}) => <MovieCard
+            <ul className={css.list}>
+                {list.map(({ id, title, vote_average, poster_path}) =><MovieCard
                     key={id}
                     title={title}
                     rating={vote_average}
                     poster={poster_path}
                     id={id}/>)}
-            </div>
+            </ul>
         </section>
     )
 }

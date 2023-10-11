@@ -1,0 +1,12 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.item {
+    width: 150px;
+background-color: rgb(88, 88, 255);
+}
+.descr {
+    padding: 5px;
+}
