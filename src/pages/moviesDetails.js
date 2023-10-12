@@ -27,7 +27,7 @@ const MovieInfo = () => {
     
     return (
         <>  
-            <Link to={backLocationRef.current}>Go Back</Link>
+            <Link to={backLocationRef.current}>{"<<Go BACK"}</Link>
             <MovieInfoItem data={dataDetails}/>
         </>
     )
