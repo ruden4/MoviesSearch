@@ -3,7 +3,6 @@ import MovieInfoItem from "components/MovieInfo/MovieInfo";
 import { useEffect, useState, useRef } from "react";
 import { useParams, Link, useLocation} from "react-router-dom";
 
-
 const MovieInfo = () => {
 
     const location = useLocation();
@@ -24,11 +23,11 @@ const MovieInfo = () => {
             }
         }
         getMoviesDetails()
-    },[movieId])
-
+    }, [movieId])
+    
     return (
         <>  
-            <Link to={backLocationRef.current}><button type="button">{`<< Go Back`}</button></Link>
+            <Link to={backLocationRef.current}>Go Back</Link>
             <MovieInfoItem data={dataDetails}/>
         </>
     )

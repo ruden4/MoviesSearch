@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { lazy } from "react";
 import css from "./App.module.css"
 
-const Home = lazy(() => import('../pages/home'));
-const MovieInfo = lazy(() => import('../pages/moviesDetails'));
-const Movies = lazy(() => import('../pages/movies'));
+const Home = lazy(() => import('../pages/Home'));
+const MovieInfo = lazy(() => import('../pages/MoviesDetails'));
+const Movies = lazy(() => import('../pages/Movies'));
 const Layout = lazy(() => import('./Layout'));
 const Reviews = lazy(() => import('./MovieInfo/Reviews'));
 const Cast = lazy(() => import('./MovieInfo/Cast'));
@@ -16,11 +16,12 @@ export const App = () => {
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path="movies" element={<Movies/>} />
-          <Route path="movies/:movieId" element={<MovieInfo/>}>
+          <Route path="movies/:movieId" element={<MovieInfo />}>
             <Route path="cast" element={<Cast/>}/>
             <Route path="reviews" element={<Reviews/>} />
           </Route>
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );

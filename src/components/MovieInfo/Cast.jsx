@@ -23,16 +23,18 @@ const Cast = () => {
 
     return (
         <div>
-            <ul className={css.list}>
+            {actors.length? <ul className={css.list}>
                 {actors.map(({ id, name, character, profile_path }) => <li className={css.item} key={id}>
-                    <img src={`https://image.tmdb.org/t/p/w300${profile_path}`}
+                    <img src={profile_path ? `https://image.tmdb.org/t/p/w300${profile_path}`
+                        : 'https://sneg.top/uploads/posts/2023-06/1687806511_sneg-top-p-avatarka-zaglushka-pinterest-3.png'}
                         alt={name}
                         width='150'
                         height='225'/>
                     <p className={css.descr}>{name}</p>
                     <p className={css.descr}>Character:{` ${character}`}</p>
                 </li>)}
-            </ul> 
+            </ul>  : <h2>Sorry, no cast!</h2>}
+            
         </div>
     )
 };

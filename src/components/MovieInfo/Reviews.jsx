@@ -20,16 +20,9 @@ const Reviews = () => {
         getReviewsDetails()
     }, [movieId]);
     
-    if (!review) return (
-        <div>
-        <p>No reviews</p>
-        </div>
-
-    );
-
     return (
         <div>
-            <ul className={css.list}>
+            {review.length? <ul className={css.list}>
                 {review.map(({ author, content, id }) =>
                     <li className={css.item} key={id}>
                         <h3 className={css.author}>{author}</h3>
@@ -37,7 +30,7 @@ const Reviews = () => {
                     </li>
                 )}
             </ul>
-
+            : <h2>Sorry, no reviews!</h2>}
         </div>
     )
 };

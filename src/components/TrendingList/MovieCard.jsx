@@ -2,7 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import css from './MovieCard.module.css'
 
 const MovieCard = ({ title, rating, poster, id }) => {
+
     const location = useLocation();
+    
     return (
         <Link to={`/movies/${id}`} state={{from: location}}>
                 <li className={css.item}>
