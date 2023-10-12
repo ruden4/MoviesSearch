@@ -3,7 +3,7 @@ import MovieInfoItem from "components/MovieInfo/MovieInfo";
 import { useEffect, useState, useRef } from "react";
 import { useParams, Link, useLocation} from "react-router-dom";
 
-const MovieInfo = () => {
+const MovieDetails = () => {
 
     const location = useLocation();
 
@@ -33,4 +33,4 @@ const MovieInfo = () => {
     )
 }
 
-export default MovieInfo;
+export default MovieDetails;
